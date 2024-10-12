@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'jvm-test-suite'
+    id 'eclipse'
+}
+
+repositories {
+    mavenCentral()
+}
+
+testing {
+    suites {
+        configureEach {
+            useJUnitJupiter()
+            dependencies {
+                implementation(project())
+                implementation(testFixtures(project(":fixtures")))
+            }
+        }
+    }
+}

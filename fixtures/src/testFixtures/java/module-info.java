@@ -1,0 +1,3 @@
+module fixtures {
+    exports fixtures;
+}
